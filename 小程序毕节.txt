@@ -1,0 +1,59 @@
+全局样式（app.wxss） 所有页面都会生效
+局部样式（例如：test.wxss）只会对当前页面有用
+（生效顺序）就近原则   权重的问题？
+
+app.json相关配置
+navigationBarBackgroundColor只支持十六进制
+navigationBarTextStyle 导航栏字体颜色
+
+全局开启下拉页面数据刷新的功能：小程序每个页面都有下拉刷新的功能    不推荐在全局配置文件里，配置下拉刷新，每个页面用到，就设置那个页面
+app.json -> window-> enablePullDownRefresh
+
+backgroundColor下拉刷新时的背景颜色
+backgroundTextStyle 下拉刷新时 loading的样式
+
+
+上拉触底的距离自动刷新后面的数据  默认值50px 没有特殊要求无需修改
+app.json ->window->onReachBottomDistance
+
+
+tabar 底部显示图标  顶部不显示icon
+
+
+tabar里面的页面需要放在pages的前面
+
+
+全局配置文件和局部配置文件
+
+全局和局部冲突时，就近原则
+
+
+
+
+二、页面跳转
+
+（1） 声明式导航
+      在页面上声明一个<navigator>组件
+  （2）编程式导航
+       调用小程序api，实现页面跳转
+
+
+
+声明式导航传参
+
+
+编程式导航传参
+
+
+
+下拉刷新
+nReachBottomDistance
+
+
+节流处理   避免重复出发下拉刷新的按钮
+
+
+<!--url必须以/开头 tabar页面 type必须为switchtab 非tabar页面type写不写都可以-->
+<navigator url="/pages/message/message" open-type="switchTab">导航到消息页面</navigator>
+<navigator url="/pages/info/info">导航到消息页面</navigator>
+
